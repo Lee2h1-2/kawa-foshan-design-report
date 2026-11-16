@@ -55,6 +55,10 @@
             nav.scrollLeft += r.left - nr.left - 24;
           }
         }
+      } else if (sections.length) {
+        /* 回到顶部时，导航也回到开头 */
+        var bar = sections[0].link.parentNode;
+        if (bar && bar.scrollLeft > 0) bar.scrollLeft = 0;
       }
     });
   }
